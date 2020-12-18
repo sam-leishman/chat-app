@@ -4,6 +4,7 @@ import { createStore } from 'redux';
 import Header from './Header.js';
 import Chat from './Chat.js';
 import ChatInput from './ChatInput.js'
+import ServerName from './ServerName'
 
 function reducer(state, action) {
   if (action.type === 'ADD_MESSAGE') {
@@ -29,8 +30,15 @@ export const store = createStore(reducer, initialState);
 function App() {
   return (
     <div className='container-fluid'>
-      <header className=''>Header</header>
-      {/* Header */}
+      <div class="row no-gutters header">
+      <header className='server-name col-3'>
+        <ServerName></ServerName>
+      </header>
+      <header className='channel-header col-9'>
+        Channel-header
+        <Header></Header>
+      </header>
+      </div>
       <div className='main-page row no-gutters'>
         <div className='channels col-3'>Channels</div>
         {/* <Channels /> */}
