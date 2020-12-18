@@ -3,8 +3,14 @@ body {
   margin: 0;
 }
 
-header {
+.server-name {
   height: 10vh;
+  border: 1px solid black;
+}
+
+.channel-header {
+  height: 10vh;
+  border: 1px solid black;
 }
 
 .container-fluid {
@@ -26,4 +32,8 @@ header {
 .message-input {
   border: 1px solid black;
   height: 10%;
+}
+
+.header {
+  padding: 0;
 }
