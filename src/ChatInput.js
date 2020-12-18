@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { createStore } from "redux";
 import { store } from "./App.js";
 
 class ChatInput extends Component {

@@ -27,9 +27,16 @@ const initialState = { messages: [] };
 
 export const store = createStore(reducer, initialState);
 
-function App() {
-  return (
-    <div className='container-fluid'>
+
+class App extends Component {
+  componentDidMount() {
+    store.subscribe(() => this.forceUpdate());
+  }
+  
+  render() {
+    const messages = store.getState().messages;
+    return (
+      <div className='container-fluid'>
       <div class="row no-gutters header">
       <header className='server-name col-3'>
         <ServerName></ServerName>
@@ -44,14 +51,14 @@ function App() {
         {/* <Channels /> */}
         <div className='chat-area col-9'>
           <div className='messages-box'>Messages box</div>
-          {/* <Chat /> */}
+            <Chat />
           <div className='message-input'>
             <ChatInput />
           </div>
         </div>
       </div>
-    </div>
-  );
+    )
+  };
 }
 
 export default App;
