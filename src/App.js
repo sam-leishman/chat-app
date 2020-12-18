@@ -1,26 +1,21 @@
-// import logo from './logo.svg';
-// import './App.css';
-// import React, { Component } from 'react';
+import './App.css';
+import { Component } from 'react';
+import { createStore } from 'redux';
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
+function App() {
+  return (
+    <div className='container-fluid'>
+      <div className='main-page row no-gutters'>
+        <div className='channels col-3'>Channels</div>
+        <div className='chat-area col-9'>
+          <div className='messages-box'>Messages box</div>
+          <div className='message-input'>Input message</div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-// export default App;
+export default App;
+
+// comment bruh
