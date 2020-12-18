@@ -32,28 +32,29 @@ class App extends Component {
   componentDidMount() {
     store.subscribe(() => this.forceUpdate());
   }
-  
+
   render() {
     const messages = store.getState().messages;
     return (
       <div className='container-fluid'>
-      <div class="row no-gutters header">
-      <header className='server-name col-3'>
-        <ServerName></ServerName>
-      </header>
-      <header className='channel-header col-9'>
-        Channel-header
+        <div class="row no-gutters header">
+          <header className='server-name col-3'>
+            <ServerName></ServerName>
+          </header>
+          <header className='channel-header col-9'>
+            Channel-header
         <Header></Header>
-      </header>
-      </div>
-      <div className='main-page row no-gutters'>
-        <div className='channels col-3'>Channels</div>
-        {/* <Channels /> */}
-        <div className='chat-area col-9'>
-          <div className='messages-box'>Messages box</div>
+          </header>
+        </div>
+        <div className='main-page row no-gutters'>
+          <div className='channels col-3'>Channels</div>
+          {/* <Channels /> */}
+          <div className='chat-area col-9'>
+            <div className='messages-box'>Messages box</div>
             <Chat />
-          <div className='message-input'>
-            <ChatInput />
+            <div className='message-input'>
+              <ChatInput />
+            </div>
           </div>
         </div>
       </div>
