@@ -3,6 +3,17 @@ import { Component } from 'react';
 import { createStore } from 'redux';
 import Header from './Header.js';
 
+function reducer(state, action) {
+  if (action.type === 'ADD_MESSAGE') {
+    return {
+      messages: state.messages.concat(action.message)
+    }
+  }
+}
+
+const initialState = { messages: [] };
+const store = createStore(reducer, initialState);
+
 function App() {
   return (
     <div className='container-fluid'>
