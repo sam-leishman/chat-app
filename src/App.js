@@ -43,15 +43,16 @@ class App extends Component {
           </header>
           <header className='channel-header col-9'>
             Channel-header
-        <Header></Header>
+            <Header></Header>
           </header>
         </div>
         <div className='main-page row no-gutters'>
           <div className='channels col-3'>Channels</div>
           {/* <Channels /> */}
           <div className='chat-area col-9'>
-            <div className='messages-box'>Messages box</div>
-            <Chat />
+            <div className='messages-box'>
+              <Chat messages={messages}/>
+            </div>
             <div className='message-input'>
               <ChatInput />
             </div>
