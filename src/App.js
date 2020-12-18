@@ -26,24 +26,32 @@ const initialState = { messages: [] };
 
 export const store = createStore(reducer, initialState);
 
-function App() {
-  return (
-    <div className='container-fluid'>
-      <header className=''>Header</header>
-      {/* Header */}
-      <div className='main-page row no-gutters'>
-        <div className='channels col-3'>Channels</div>
-        {/* <Channels /> */}
-        <div className='chat-area col-9'>
-          <div className='messages-box'>Messages box</div>
-          {/* <Chat /> */}
-          <div className='message-input'>
-            <ChatInput />
+class App extends Component {
+  componentDidMount() {
+    store.subscribe(() => this.forceUpdate());
+  }
+  
+  render() {
+    const messages = store.getState().messages;
+    return (
+      <div className='container-fluid'>
+        <header className=''>Header</header>
+        {/* Header */}
+        <div className='main-page row no-gutters'>
+          <div className='channels col-3'>Channels</div>
+          {/* <Channels /> */}
+          <div className='chat-area col-9'>
+            <div className='messages-box'>
+              <Chat messages={messages} />
+            </div>
+            <div className='message-input'>
+              <ChatInput />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    )
+  };
 }
 
 export default App;
