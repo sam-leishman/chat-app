@@ -5,6 +5,8 @@ import Header from './Header.js';
 import Chat from './Chat.js';
 import ChatInput from './ChatInput.js'
 import ServerName from './ServerName'
+import Channels from './Channels'
+import ChannelInput from './ChannelInput'
 
 function reducer(state, action) {
   if (action.type === 'ADD_MESSAGE') {
@@ -37,7 +39,7 @@ class App extends Component {
     const messages = store.getState().messages;
     return (
       <div className='container-fluid'>
-        <div class="row no-gutters header">
+        <div className="row no-gutters header">
           <header className='server-name col-3'>
             <ServerName></ServerName>
           </header>
@@ -47,15 +49,18 @@ class App extends Component {
           </header>
         </div>
         <div className='main-page row no-gutters'>
-          <div className='channels col-3'>Channels</div>
-          {/* <Channels /> */}
-          <div className='chat-area col-9'>
-            <div className='messages-box'>
-              <Chat messages={messages}/>
-            </div>
-            <div className='message-input'>
-              <ChatInput />
-            </div>
+          <div className='channels col-3'>
+            Channels
+            <Channels />
+          </div>
+          <div className='messages-box col-9'>
+            <Chat messages={messages}/>
+          </div>
+          <div className='channel-input col-3'>
+              <ChannelInput />
+          </div>
+          <div className='message-input col-9'>
+            <ChatInput />
           </div>
         </div>
       </div>

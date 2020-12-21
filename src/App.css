@@ -23,12 +23,31 @@ body {
 
 .channels {
   border: 1px solid black;
+  height: 90%;
 }
+
 .messages-box {
   border: 1px solid black;
   height: 90%;
   overflow-y: scroll;
 }
+
+.message {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: blanchedalmond;
+  text-align: right;
+}
+
+.trash-button {
+  visibility: hidden;
+}
+
+.message:hover .trash-button {
+  visibility: visible;
+}
+
 .message-input {
   border: 1px solid black;
   height: 10%;
@@ -36,4 +55,13 @@ body {
 
 .header {
   padding: 0;
+}
+
+.channel-input {
+  border: 1px solid black;
+  height: 10%;
+}
+
+.channel-submit-input {
+  width: 100%;
 }

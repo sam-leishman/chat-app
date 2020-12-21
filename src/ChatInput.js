@@ -12,7 +12,8 @@ class ChatInput extends Component {
         })
     }
 
-    handleSubmit = () => {
+    handleSubmit = (e) => {
+        e.preventDefault()
         store.dispatch({
             type: 'ADD_MESSAGE',
             message: this.state.value,
@@ -25,11 +26,13 @@ class ChatInput extends Component {
     render() {
         return (
             <div>
-                <input
-                    onChange={this.onChange}
-                    value={this.state.value}
-                    type='text'
-                />
+                <form onSubmit={this.handleSubmit}>
+                    <input
+                        onChange={this.onChange}
+                        value={this.state.value}
+                        type='text'
+                    />
+                </form>
                 <button
                     onClick={this.handleSubmit}
                     className='submit-button'
