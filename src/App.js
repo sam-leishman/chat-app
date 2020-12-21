@@ -3,7 +3,6 @@ import { Component } from 'react';
 import { createStore } from 'redux';
 import { v4 as uuidv4 } from 'uuid';
 import { fullDate } from './date.js'
-
 // Component imports
 import Header from './Header.js';
 import Chat from './Chat.js';
@@ -11,6 +10,7 @@ import ChatInput from './ChatInput.js'
 import ServerName from './ServerName'
 import Channels from './Channels'
 import ChannelInput from './ChannelInput'
+
 
 function reducer(state, action) {
   if (action.type === 'ADD_MESSAGE') {
@@ -33,10 +33,29 @@ function reducer(state, action) {
   }
 }
 
-const initialState = { messages: [] };
+const initialState = {
+  currentChannelId: '1-fca2', // New state property
+  channels: [ // Two threads in state
+    {
+      id: '1-fca2', // hardcoded pseudo-UUID
+      title: 'Buzz Aldrin',
+      messages: [
+        { // This thread starts with a single message already
+          text: 'Test',
+          timestamp: fullDate,
+          id: uuidv4(),
+        },
+      ],
+    },
+    {
+      id: '2-be91',
+      title: 'Michael Collins',
+      messages: [],
+    },
+  ],
+};
 
 export const store = createStore(reducer, initialState);
-
 
 class App extends Component {
   componentDidMount() {
@@ -44,7 +63,17 @@ class App extends Component {
   }
 
   render() {
-    const messages = store.getState().messages;
+    const state = store.getState();
+    const currentChannelId = state.currentChannelId;
+    const channels = state.channels;
+    const currentChannel = channels.find((c) => c.id === currentChannelId);
+    const channelTabs = channels.map(c => (
+      {
+        title: c.title,
+        active: c.id === currentChannelId,
+      }
+    ))
+
     return (
       <div className='container-fluid'>
         <div className="row no-gutters header">
@@ -59,13 +88,15 @@ class App extends Component {
         <div className='main-page row no-gutters'>
           <div className='channels col-3'>
             <h5>Channels</h5>
-            <Channels />
+            <Channels channelTabs={channelTabs} />
           </div>
           <div className='messages-box col-9'>
-            <Chat messages={messages}/>
+            <Chat
+              channel={currentChannel}
+            />
           </div>
           <div className='channel-input col-3'>
-              <ChannelInput />
+            <ChannelInput />
           </div>
           <div className='message-input col-9'>
             <ChatInput />
