@@ -38,7 +38,7 @@ const initialState = {
   channels: [ // Two threads in state
     {
       id: '1-fca2', // hardcoded pseudo-UUID
-      title: 'Buzz Aldrin',
+      title: 'Test Channel 1',
       messages: [
         { // This thread starts with a single message already
           text: 'Test',
@@ -49,7 +49,7 @@ const initialState = {
     },
     {
       id: '2-be91',
-      title: 'Michael Collins',
+      title: 'Test Channel 2',
       messages: [],
     },
   ],
@@ -67,7 +67,15 @@ class App extends Component {
     const state = store.getState();
     const currentChannelId = state.currentChannelId;
     const channels = state.channels;
-    const currentChannel = channels.find((t) => t.id === currentChannelId);
+    const currentChannel = channels.find((c) => c.id === currentChannelId);
+
+    const channelTabs = channels.map(c => (
+      {
+        title: c.title,
+        active: c.id === currentChannelId,
+      }
+    ))
+
     return (
       <div className='container-fluid'>
         <div className="row no-gutters header">
@@ -82,7 +90,7 @@ class App extends Component {
         <div className='main-page row no-gutters'>
           <div className='channels col-3'>
             <h5>Channels</h5>
-            <Channels />
+            <Channels channelTabs={channelTabs} />
           </div>
           <div className='messages-box col-9'>
             <Chat

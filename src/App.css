@@ -41,6 +41,7 @@ body {
   padding: 0px 5px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .timestamp {
@@ -72,6 +73,22 @@ body {
 
 .channel-submit-input {
   width: 100%;
+}
+
+.tab {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 5px 0;
+  padding: 0 5px;
+}
+
+.currentTab {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 5px 0;
+  padding: 0 5px;
+  background-color: gray;
+  color: white;
 }
 
 h5 {
