@@ -11,10 +11,12 @@ class Chat extends Component {
 
     render() {
         const messages = this.props.channel.messages.map((message, index) => (
-            <div key={index} className='message'>
+            <div key={index} className='message flex'>
                 {message.text}
-                <span className='timestamp'>{message.timestamp}</span>
-                <button className='btn' onClick={() => this.handleClick(message.id)}><i className="fas fa-trash trash-button"></i></button>
+                <div>
+                    <span className='timestamp flex'>{message.timestamp}</span>
+                    <button className='btn' onClick={() => this.handleClick(message.id)}><i className="fas fa-trash trash-button"></i></button>
+                </div>
             </div>
         ))
 

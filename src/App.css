@@ -39,6 +39,8 @@ body {
   background-color: blanchedalmond;
   text-align: left;
   padding: 0px 5px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .timestamp {
@@ -71,3 +73,8 @@ body {
 .channel-submit-input {
   width: 100%;
 }
+
+h5 {
+  text-align: center;
+}
+
