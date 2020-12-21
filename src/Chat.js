@@ -10,7 +10,7 @@ class Chat extends Component {
     }
 
     render() {
-        const messages = this.props.messages.map((message, index) => (
+        const messages = this.props.channel.messages.map((message, index) => (
             <div key={index} className='message flex'>
                 {message.text}
                 <div>

@@ -33,7 +33,27 @@ function reducer(state, action) {
   }
 }
 
-const initialState = { messages: [] };
+const initialState = {
+  currentChannelId: '1-fca2', // New state property
+  channels: [ // Two threads in state
+    {
+      id: '1-fca2', // hardcoded pseudo-UUID
+      title: 'Buzz Aldrin',
+      messages: [
+        { // This thread starts with a single message already
+          text: 'Test',
+          timestamp: fullDate,
+          id: uuidv4(),
+        },
+      ],
+    },
+    {
+      id: '2-be91',
+      title: 'Michael Collins',
+      messages: [],
+    },
+  ],
+};
 
 export const store = createStore(reducer, initialState);
 
@@ -44,7 +64,10 @@ class App extends Component {
   }
 
   render() {
-    const messages = store.getState().messages;
+    const state = store.getState();
+    const currentChannelId = state.currentChannelId;
+    const channels = state.channels;
+    const currentChannel = channels.find((t) => t.id === currentChannelId);
     return (
       <div className='container-fluid'>
         <div className="row no-gutters header">
@@ -62,10 +85,12 @@ class App extends Component {
             <Channels />
           </div>
           <div className='messages-box col-9'>
-            <Chat messages={messages}/>
+            <Chat
+              channel={currentChannel}
+            />
           </div>
           <div className='channel-input col-3'>
-              <ChannelInput />
+            <ChannelInput />
           </div>
           <div className='message-input col-9'>
             <ChatInput />
