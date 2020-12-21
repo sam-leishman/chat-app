@@ -11,9 +11,9 @@ class Chat extends Component {
 
     render() {
         const messages = this.props.messages.map((message, index) => (
-            <div key={index}>
+            <div key={index} className='message'>
                 {message}
-                <button className='btn' onClick={() => this.handleClick(index)}><i class="fas fa-trash"></i></button>
+                <button className='btn' onClick={() => this.handleClick(index)}><i className="fas fa-trash trash-button"></i></button>
             </div>
         ))
 

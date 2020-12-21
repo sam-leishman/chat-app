@@ -24,11 +24,29 @@ body {
 .channels {
   border: 1px solid black;
 }
+
 .messages-box {
   border: 1px solid black;
   height: 90%;
   overflow-y: scroll;
 }
+
+.message {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: blanchedalmond;
+  text-align: right;
+}
+
+.trash-button {
+  visibility: hidden;
+}
+
+.message:hover .trash-button {
+  visibility: visible;
+}
+
 .message-input {
   border: 1px solid black;
   height: 10%;

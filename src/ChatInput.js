@@ -25,11 +25,13 @@ class ChatInput extends Component {
     render() {
         return (
             <div>
-                <input
-                    onChange={this.onChange}
-                    value={this.state.value}
-                    type='text'
-                />
+                <form onSubmit={this.handleSubmit}>
+                    <input
+                        onChange={this.onChange}
+                        value={this.state.value}
+                        type='text'
+                    />
+                </form>
                 <button
                     onClick={this.handleSubmit}
                     className='submit-button'
