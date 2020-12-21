@@ -3,7 +3,6 @@ import { Component } from 'react';
 import { createStore } from 'redux';
 import { v4 as uuidv4 } from 'uuid';
 import { fullDate } from './date.js'
-
 // Component imports
 import Header from './Header.js';
 import Chat from './Chat.js';
@@ -11,6 +10,7 @@ import ChatInput from './ChatInput.js'
 import ServerName from './ServerName'
 import Channels from './Channels'
 import ChannelInput from './ChannelInput'
+
 
 function reducer(state, action) {
   if (action.type === 'ADD_MESSAGE') {
@@ -56,7 +56,6 @@ const initialState = {
 };
 
 export const store = createStore(reducer, initialState);
-
 
 class App extends Component {
   componentDidMount() {
