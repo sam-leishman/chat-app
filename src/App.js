@@ -38,7 +38,7 @@ const initialState = {
   channels: [ // Two threads in state
     {
       id: '1-fca2', // hardcoded pseudo-UUID
-      title: 'Buzz Aldrin',
+      title: 'Test Channel 1',
       messages: [
         { // This thread starts with a single message already
           text: 'Test',
@@ -49,7 +49,7 @@ const initialState = {
     },
     {
       id: '2-be91',
-      title: 'Michael Collins',
+      title: 'Test Channel 2',
       messages: [],
     },
   ],
@@ -67,6 +67,7 @@ class App extends Component {
     const currentChannelId = state.currentChannelId;
     const channels = state.channels;
     const currentChannel = channels.find((c) => c.id === currentChannelId);
+
     const channelTabs = channels.map(c => (
       {
         title: c.title,
