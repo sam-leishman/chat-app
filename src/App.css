@@ -23,6 +23,7 @@ body {
 
 .channels {
   border: 1px solid black;
+  height: 90%;
 }
 
 .messages-box {
@@ -54,4 +55,13 @@ body {
 
 .header {
   padding: 0;
+}
+
+.channel-input {
+  border: 1px solid black;
+  height: 10%;
+}
+
+.channel-submit-input {
+  width: 100%;
 }
