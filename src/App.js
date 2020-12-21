@@ -1,6 +1,10 @@
 import './App.css';
 import { Component } from 'react';
 import { createStore } from 'redux';
+import { v4 as uuidv4 } from 'uuid';
+import { fullDate } from './date.js'
+
+// Component imports
 import Header from './Header.js';
 import Chat from './Chat.js';
 import ChatInput from './ChatInput.js'
@@ -8,15 +12,19 @@ import ServerName from './ServerName'
 
 function reducer(state, action) {
   if (action.type === 'ADD_MESSAGE') {
+    const messageToAdd = {
+      text: action.text,
+      timestamp: fullDate,
+      id: uuidv4(),
+    }
     return {
-      messages: state.messages.concat(action.message)
+      messages: state.messages.concat(messageToAdd)
     }
   } else if (action.type === 'DELETE_MESSAGE') {
     return {
-      messages: [
-        ...state.messages.slice(0, action.index),
-        ...state.messages.slice(action.index + 1, state.messages.length),
-      ],
+      messages: state.messages.filter((message) => (
+        message.id !== action.id
+      ))
     }
   } else {
     return state;
@@ -37,7 +45,7 @@ class App extends Component {
     const messages = store.getState().messages;
     return (
       <div className='container-fluid'>
-        <div class="row no-gutters header">
+        <div className="row no-gutters header">
           <header className='server-name col-3'>
             <ServerName></ServerName>
           </header>
