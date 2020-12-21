@@ -37,7 +37,13 @@ body {
   border-radius: 5px;
   margin: 10px;
   background-color: blanchedalmond;
-  text-align: right;
+  text-align: left;
+  padding: 0px 5px;
+}
+
+.timestamp {
+  color: gray;
+  font-size: 10pt;
 }
 
 .trash-button {

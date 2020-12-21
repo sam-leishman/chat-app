@@ -16,7 +16,7 @@ class ChatInput extends Component {
         e.preventDefault()
         store.dispatch({
             type: 'ADD_MESSAGE',
-            message: this.state.value,
+            text: this.state.value,
         })
         this.setState({
             value: '',

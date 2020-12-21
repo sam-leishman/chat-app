@@ -2,18 +2,19 @@ import React, { Component } from 'react';
 import { store } from './App';
 
 class Chat extends Component {
-    handleClick = (index) => {
+    handleClick = (id) => {
         store.dispatch({
             type: 'DELETE_MESSAGE',
-            index: index,
+            id: id,
         })
     }
 
     render() {
         const messages = this.props.messages.map((message, index) => (
             <div key={index} className='message'>
-                {message}
-                <button className='btn' onClick={() => this.handleClick(index)}><i className="fas fa-trash trash-button"></i></button>
+                {message.text}
+                <span className='timestamp'>{message.timestamp}</span>
+                <button className='btn' onClick={() => this.handleClick(message.id)}><i className="fas fa-trash trash-button"></i></button>
             </div>
         ))
 
