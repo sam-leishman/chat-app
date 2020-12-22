@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { store } from './App';
 
+import ChannelInput from './ChannelInput'
+
 class Channels extends Component {
     render() {
         const tabs = this.props.channelTabs.map((tab, i) => (
@@ -14,6 +16,9 @@ class Channels extends Component {
         return (
             <div>
                 {tabs}
+                <div className='channel-input'>
+                    <ChannelInput />
+                </div>
             </div>
         )
     }

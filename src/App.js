@@ -6,7 +6,6 @@ import Header from './Header.js';
 import Chat from './Chat.js';
 import ServerName from './ServerName'
 import Channels from './Channels'
-import ChannelInput from './ChannelInput'
 
 
 
@@ -47,9 +46,6 @@ class App extends Component {
             <Chat
               channel={currentChannel}
             />
-          </div>
-          <div className='channel-input col-3'>
-            <ChannelInput />
           </div>
         </div>
       </div>
