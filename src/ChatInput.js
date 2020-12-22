@@ -14,6 +14,9 @@ class ChatInput extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
+        if (this.state.value === '') {
+            return;
+        }
         store.dispatch({
             type: 'ADD_MESSAGE',
             text: this.state.value,
