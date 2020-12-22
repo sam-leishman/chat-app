@@ -8,7 +8,6 @@ import Channels from './Channels'
 
 import {
   BrowserRouter as Router,
-  Route,
   Link,
   Switch
 } from 'react-router-dom'
@@ -62,7 +61,6 @@ class App extends Component {
           </div>
           <Switch>
             {/* We'll insert more Route components here */}
-            {/* <Route path="/homeChat" component={Compiler} /> */}
           </Switch>
         </div>
       </Router>
