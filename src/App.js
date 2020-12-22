@@ -34,13 +34,13 @@ function reducer(state, action) {
 }
 
 const initialState = {
-  currentChannelId: '1-fca2', // New state property
-  channels: [ // Two threads in state
+  currentChannelId: '1-fca2',
+  channels: [
     {
-      id: '1-fca2', // hardcoded pseudo-UUID
+      id: '1-fca2',
       title: 'Test Channel 1',
       messages: [
-        { // This thread starts with a single message already
+        {
           text: 'Test',
           timestamp: fullDate,
           id: uuidv4(),
@@ -82,8 +82,7 @@ class App extends Component {
             <ServerName></ServerName>
           </header>
           <header className='channel-header col-9'>
-            Channel-header
-            <Header></Header>
+            <Header channelTabs={channelTabs} />
           </header>
         </div>
         <div className='main-page row no-gutters'>
