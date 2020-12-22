@@ -17,6 +17,7 @@ class ChatInput extends Component {
         store.dispatch({
             type: 'ADD_MESSAGE',
             text: this.state.value,
+            channelId: this.props.channelId,
         })
         this.setState({
             value: '',

@@ -6,7 +6,6 @@ import { fullDate } from './date.js'
 // Component imports
 import Header from './Header.js';
 import Chat from './Chat.js';
-import ChatInput from './ChatInput.js'
 import ServerName from './ServerName'
 import Channels from './Channels'
 import ChannelInput from './ChannelInput'
@@ -19,14 +18,40 @@ function reducer(state, action) {
       timestamp: fullDate,
       id: uuidv4(),
     }
+    const channelIndex = state.channels.findIndex(c => c.id === action.channelId)
+    const lastChannel = state.channels[channelIndex]
+    const newChannel = {
+      ...lastChannel,
+      messages: lastChannel.messages.concat(messageToAdd)
+    }
     return {
-      messages: state.messages.concat(messageToAdd)
+      ...state,
+      channels: [
+        ...state.channels.slice(0, channelIndex),
+        newChannel,
+        ...state.channels.slice(channelIndex + 1, state.channels.length)
+      ]
     }
   } else if (action.type === 'DELETE_MESSAGE') {
-    return {
-      messages: state.messages.filter((message) => (
+    const channelIndex = state.channels.findIndex(
+      c => c.messages.find(message => (
+        message.id === action.id
+      ))
+    )
+    const lastChannel = state.channels[channelIndex]
+    const newChannel = {
+      ...lastChannel,
+      messages: lastChannel.messages.filter(message => (
         message.id !== action.id
       ))
+    }
+    return {
+      ...state,
+      channels: [
+        ...state.channels.slice(0, channelIndex),
+        newChannel,
+        ...state.channels.slice(channelIndex + 1, state.channels.length)
+      ]
     }
   } else {
     return state;
@@ -34,13 +59,13 @@ function reducer(state, action) {
 }
 
 const initialState = {
-  currentChannelId: '1-fca2', // New state property
-  channels: [ // Two threads in state
+  currentChannelId: '1-fca2',
+  channels: [
     {
-      id: '1-fca2', // hardcoded pseudo-UUID
+      id: '1-fca2',
       title: 'Test Channel 1',
       messages: [
-        { // This thread starts with a single message already
+        {
           text: 'Test',
           timestamp: fullDate,
           id: uuidv4(),
@@ -97,9 +122,6 @@ class App extends Component {
           </div>
           <div className='channel-input col-3'>
             <ChannelInput />
-          </div>
-          <div className='message-input col-9'>
-            <ChatInput />
           </div>
         </div>
       </div>
