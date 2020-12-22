@@ -87,6 +87,28 @@ body {
 .input-form input {
   height: 100%;
   width: 100%;
+  padding-left: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+  border-bottom: 1px solid blueviolet;
+
+  transition: border-bottom 150ms ease-in;
+}
+
+.input-form input:focus {
+  border-bottom-width: 3px;
+}
+
+.input-form button {
+  background-color: rgba(137, 43, 226, 0.5);
+  border-radius: 0;
+
+  transition: all 150ms ease-in;
+}
+
+.input-form button:hover {
+  background-color: blueviolet;
+  color: white;
 }
 
 .channel-submit-input {
