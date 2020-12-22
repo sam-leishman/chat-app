@@ -61,7 +61,6 @@ class App extends Component {
           </div>
           <Switch>
             {/* We'll insert more Route components here */}
-            {/* <Route path="/homeChat" component={Compiler} /> */}
           </Switch>
         </div>
       </Router>

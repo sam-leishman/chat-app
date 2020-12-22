@@ -8,13 +8,14 @@ class ChannelInput extends Component {
                     <input
                         type="text"
                         className="channel-submit-input"
+                        placeholder='New channel'
                     />
                 </form>
                 <button
                     className='submit-button btn'
                     type='submit'
                 >
-                    Send
+                    <i className="fas fa-arrow-up"></i>
                 </button>
             </div>
         )

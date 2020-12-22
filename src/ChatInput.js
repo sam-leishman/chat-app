@@ -32,6 +32,7 @@ class ChatInput extends Component {
                         onChange={this.onChange}
                         value={this.state.value}
                         type='text'
+                        placeholder='Send a message!'
                     />
                 </form>
                 <button
@@ -39,7 +40,7 @@ class ChatInput extends Component {
                     className='submit-button btn'
                     type='submit'
                 >
-                    Send
+                    <i className="fas fa-arrow-up"></i>
                 </button>
             </div>
         )
