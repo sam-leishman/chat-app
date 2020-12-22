@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { store } from './App';
 
 import ChannelInput from './ChannelInput'
 
