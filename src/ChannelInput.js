@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class ChannelInput extends Component {
     render() {
         return (
-            <div>
+            <div className='input-form'>
                 <form>
                     <input
                         type="text"
@@ -11,7 +11,7 @@ class ChannelInput extends Component {
                     />
                 </form>
                 <button
-                    className='submit-button'
+                    className='submit-button btn'
                     type='submit'
                 >
                     Send

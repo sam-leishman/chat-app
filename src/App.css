@@ -26,6 +26,13 @@ body {
   height: 100%;
 }
 
+.component-with-input {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .messages-box {
   border: 1px solid black;
   height: 100%;
@@ -57,18 +64,29 @@ body {
   visibility: visible;
 }
 
-.message-input {
-  border: 1px solid black;
-  height: 10%;
-}
-
 .header {
   padding: 0;
 }
 
+/* .message-input {
+  border: 1px solid black;
+}
+
 .channel-input {
   border: 1px solid black;
-  height: 10%;
+} */
+
+.input-form {
+  display: flex;
+}
+
+.input-form form {
+  width: 100%;
+}
+
+.input-form input {
+  height: 100%;
+  width: 100%;
 }
 
 .channel-submit-input {
