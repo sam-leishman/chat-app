@@ -14,8 +14,11 @@ class Channels extends Component {
             </div>
         ))
         return (
-            <div>
-                {tabs}
+            <div className='component-with-input'>
+                <div>
+                    <h5>Channels</h5>
+                    {tabs}
+                </div>
                 <div className='channel-input'>
                     <ChannelInput />
                 </div>

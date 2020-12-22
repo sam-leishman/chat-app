@@ -39,7 +39,6 @@ class App extends Component {
         </div>
         <div className='main-page row no-gutters'>
           <div className='channels col-3'>
-            <h5>Channels</h5>
             <Channels channelTabs={channelTabs} />
           </div>
           <div className='messages-box col-9'>

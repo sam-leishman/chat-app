@@ -26,7 +26,7 @@ class ChatInput extends Component {
 
     render() {
         return (
-            <div>
+            <div className='input-form'>
                 <form onSubmit={this.handleSubmit}>
                     <input
                         onChange={this.onChange}
@@ -36,7 +36,7 @@ class ChatInput extends Component {
                 </form>
                 <button
                     onClick={this.handleSubmit}
-                    className='submit-button'
+                    className='submit-button btn'
                     type='submit'
                 >
                     Send
