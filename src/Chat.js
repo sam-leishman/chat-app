@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { store } from './App';
+import { store } from './main.js';
 
 import ChatInput from './ChatInput.js'
 

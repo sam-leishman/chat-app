@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { store } from "./App.js";
+import { store } from "./main.js";
 
 class ChatInput extends Component {
     state = {
