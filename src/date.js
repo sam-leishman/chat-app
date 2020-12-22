@@ -15,4 +15,5 @@ var date = today.getDate()
 var monthName = monthNames[today.getMonth()];
 
 export const fullDate = `${weekday}, ${date} ${monthName}`
+export const time = `${today.getHours()}:${today.getMinutes()}`
 // =========================
