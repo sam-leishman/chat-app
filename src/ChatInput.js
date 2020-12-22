@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { store } from "./App.js";
+import { store } from "./main.js";
 
 class ChatInput extends Component {
     state = {
@@ -17,6 +17,7 @@ class ChatInput extends Component {
         store.dispatch({
             type: 'ADD_MESSAGE',
             text: this.state.value,
+            channelId: this.props.channelId,
         })
         this.setState({
             value: '',

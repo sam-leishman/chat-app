@@ -1,61 +1,14 @@
 import './App.css';
 import { Component } from 'react';
-import { createStore } from 'redux';
-import { v4 as uuidv4 } from 'uuid';
-import { fullDate } from './date.js'
+import { store } from './main.js';
 // Component imports
 import Header from './Header.js';
 import Chat from './Chat.js';
-import ChatInput from './ChatInput.js'
 import ServerName from './ServerName'
 import Channels from './Channels'
 import ChannelInput from './ChannelInput'
 
 
-function reducer(state, action) {
-  if (action.type === 'ADD_MESSAGE') {
-    const messageToAdd = {
-      text: action.text,
-      timestamp: fullDate,
-      id: uuidv4(),
-    }
-    return {
-      messages: state.messages.concat(messageToAdd)
-    }
-  } else if (action.type === 'DELETE_MESSAGE') {
-    return {
-      messages: state.messages.filter((message) => (
-        message.id !== action.id
-      ))
-    }
-  } else {
-    return state;
-  }
-}
-
-const initialState = {
-  currentChannelId: '1-fca2',
-  channels: [
-    {
-      id: '1-fca2',
-      title: 'Test Channel 1',
-      messages: [
-        {
-          text: 'Test',
-          timestamp: fullDate,
-          id: uuidv4(),
-        },
-      ],
-    },
-    {
-      id: '2-be91',
-      title: 'Test Channel 2',
-      messages: [],
-    },
-  ],
-};
-
-export const store = createStore(reducer, initialState);
 
 class App extends Component {
   componentDidMount() {
@@ -97,9 +50,6 @@ class App extends Component {
           </div>
           <div className='channel-input col-3'>
             <ChannelInput />
-          </div>
-          <div className='message-input col-9'>
-            <ChatInput />
           </div>
         </div>
       </div>

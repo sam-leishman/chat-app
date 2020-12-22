@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { store } from './App';
+import { store } from './main.js';
+
+import ChatInput from './ChatInput.js'
 
 class Chat extends Component {
     handleClick = (id) => {
@@ -23,6 +25,9 @@ class Chat extends Component {
         return (
             <div>
                 {messages}
+                <div className='message-input col-9'>
+                    <ChatInput channelId={this.props.channel.id} />
+                </div>
             </div>
         )
     }
