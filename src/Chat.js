@@ -25,7 +25,7 @@ class Chat extends Component {
         return (
             <div>
                 {messages}
-                <div className='message-input col-9'>
+                <div className='message-input'>
                     <ChatInput channelId={this.props.channel.id} />
                 </div>
             </div>
