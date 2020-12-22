@@ -82,8 +82,7 @@ class App extends Component {
             <ServerName></ServerName>
           </header>
           <header className='channel-header col-9'>
-            Channel-header
-            <Header></Header>
+            <Header channelTabs={channelTabs} />
           </header>
         </div>
         <div className='main-page row no-gutters'>
