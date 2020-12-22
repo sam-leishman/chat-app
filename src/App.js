@@ -8,7 +8,6 @@ import Channels from './Channels'
 
 import {
   BrowserRouter as Router,
-  Route,
   Link,
   Switch
 } from 'react-router-dom'
