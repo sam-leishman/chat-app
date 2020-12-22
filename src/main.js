@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 import { v4 as uuidv4 } from 'uuid';
-import { fullDate, time } from './date.js'
+import { time } from './date.js'
 
 export function reducer(state, action) {
     if (action.type === 'ADD_MESSAGE') {
