@@ -43,7 +43,7 @@ class ChatInput extends Component {
                     className='submit-button btn'
                     type='submit'
                 >
-                    <i class="fas fa-arrow-up"></i>
+                    <i className="fas fa-arrow-up"></i>
                 </button>
             </div>
         )
