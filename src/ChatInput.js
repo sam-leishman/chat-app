@@ -17,9 +17,39 @@ class ChatInput extends Component {
         if (this.state.value === '') {
             return;
         }
+        let currentTime = '';
+        function clearTime() {
+            currentTime = '';
+        }
+        function time() {
+            var today = new Date();
+
+            let hours = today.getHours();
+            let minutes = today.getMinutes();
+            let amOrPm = '';
+
+            if (hours > 11) {
+                if (hours > 12) {
+                    hours -= 12;
+                }
+                amOrPm = 'PM'
+            } else if (hours < 12) {
+                amOrPm = 'AM'
+            }
+
+            let zero = ''
+            if (minutes < 10) {
+                zero = 0
+            }
+
+            currentTime = `${hours}:${zero}${minutes} ${amOrPm}`
+        }
+        clearTime();
+        time();
         store.dispatch({
             type: 'ADD_MESSAGE',
             text: this.state.value,
+            time: currentTime,
             channelId: this.props.channelId,
         })
         this.setState({
