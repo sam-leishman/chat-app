@@ -28,6 +28,7 @@ class App extends Component {
       {
         title: c.title,
         active: c.id === currentChannelId,
+        id: c.id,
       }
     ))
 

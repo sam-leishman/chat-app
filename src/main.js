@@ -44,6 +44,11 @@ export function reducer(state, action) {
                 ...state.channels.slice(channelIndex + 1, state.channels.length)
             ]
         }
+    } else if (action.type === 'OPEN_CHANNEL') {
+        return {
+            ...state,
+            currentChannelId: action.id,
+        }
     } else {
         return state;
     }
