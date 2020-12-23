@@ -138,6 +138,11 @@ body {
   align-items: center;
 }
 
+.no-channel {
+  text-align: center;
+  margin-top: 20px;
+}
+
 h5 {
   text-align: center;
 }
