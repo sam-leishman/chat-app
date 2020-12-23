@@ -1,12 +1,12 @@
 import { createStore } from 'redux';
 import { v4 as uuidv4 } from 'uuid';
-import { time } from './date.js'
+// import { time } from './date.js'
 
 export function reducer(state, action) {
     if (action.type === 'ADD_MESSAGE') {
         const messageToAdd = {
             text: action.text,
-            timestamp: time,
+            timestamp: action.time,
             id: uuidv4(),
         }
         const channelIndex = state.channels.findIndex(c => c.id === action.channelId)
@@ -58,7 +58,7 @@ export const initialState = {
             messages: [
                 {
                     text: 'Test',
-                    timestamp: time,
+                    timestamp: '(timestamp)',
                     id: uuidv4(),
                 },
             ],

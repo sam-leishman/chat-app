@@ -15,5 +15,27 @@ var date = today.getDate()
 var monthName = monthNames[today.getMonth()];
 
 export const fullDate = `${weekday}, ${date} ${monthName}`
-export const time = `${today.getHours()}:${today.getMinutes()}`
+
+// Time
+export function time() {
+    let hours = today.getHours();
+    let minutes = today.getMinutes();
+    let amOrPm = '';
+
+    if (hours > 11) {
+        if (hours > 12) {
+            hours -= 12;
+        }
+        amOrPm = 'PM'
+    } else if (hours < 12) {
+        amOrPm = 'AM'
+    }
+
+    let zero = ''
+    if (minutes < 10) {
+        zero = 0
+    }
+    
+    return `${hours}:${zero}${minutes} ${amOrPm}`
+}
 // =========================

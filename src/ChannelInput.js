@@ -15,7 +15,7 @@ class ChannelInput extends Component {
                     className='submit-button btn'
                     type='submit'
                 >
-                    <i className="fas fa-arrow-up"></i>
+                    <i className="fas fa-plus"></i>
                 </button>
             </div>
         )
