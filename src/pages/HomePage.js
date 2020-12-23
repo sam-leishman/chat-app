@@ -1,9 +1,9 @@
 import { Component } from 'react';
-import { store } from './main.js';
-import Header from './Header.js';
-import Chat from './Chat.js';
-import ServerName from './ServerName'
-import Channels from './Channels'
+import { store } from '../components/main.js';
+import Header from '../components/Header.js';
+import Chat from '../components/Chat.js';
+import ServerName from '../components/ServerName'
+import Channels from '../components/Channels'
 
 class HomePage extends Component {
     componentDidMount() {
@@ -20,6 +20,7 @@ class HomePage extends Component {
             {
                 title: c.title,
                 active: c.id === currentChannelId,
+                id: c.id,
             }
         ))
 
