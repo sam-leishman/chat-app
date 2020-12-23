@@ -12,7 +12,8 @@ class Channels extends Component {
         })
     }
 
-    handleDelete = (id) => {
+    handleDelete = (e,id) => {
+        e.stopPropagation();
         store.dispatch({
             type: 'DELETE_CHANNEL',
             id: id,
@@ -28,7 +29,7 @@ class Channels extends Component {
                 onClick={() => this.handleClick(tab.id)}
             >
                 {tab.title}
-                <button className='btn' onClick={() => this.handleDelete(tab.id)}><i className="fas fa-times"></i></button>
+                <button className='btn' onClick={(e) => this.handleDelete(e,tab.id)}><i className="fas fa-times"></i></button>
 
             </div>
         ))

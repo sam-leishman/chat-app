@@ -12,6 +12,11 @@ class Chat extends Component {
     }
 
     render() {
+        if(this.props.channel === undefined) {
+            return(
+                <div>Please select or create a channel from the channel menu</div>
+            )
+        }
         const messages = this.props.channel.messages.map((message, index) => (
             <div key={index} className='message flex'>
                 {message.text}
