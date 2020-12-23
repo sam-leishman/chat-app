@@ -147,3 +147,23 @@ h5 {
   text-align: center;
 }
 
+
+
+.user-info {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-sidebar {
+  border: 1px solid black;
+}
+
+.profile-pic {
+  border: 1px solid black;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
