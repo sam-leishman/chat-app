@@ -121,6 +121,9 @@ body {
   border-bottom: 1px solid black;
   margin: 5px 0;
   padding: 0 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .currentTab {
@@ -130,6 +133,9 @@ body {
   padding: 0 5px;
   background-color: gray;
   color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 h5 {

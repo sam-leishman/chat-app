@@ -49,6 +49,29 @@ export function reducer(state, action) {
             ...state,
             currentChannelId: action.id,
         }
+
+    } else if (action.type === 'ADD_CHANNEL') {
+        const channelToAdd = {
+            id: uuidv4(),
+            title: action.title,
+            messages: [],
+        }
+        return {
+            ...state,
+            channels: [
+                ...state.channels,
+                channelToAdd,
+            ]
+        }
+    } else if (action.type === 'DELETE_CHANNEL') {
+        return {
+            ...state,
+            channels: [
+                ...state.channels.filter(channel => (
+                    channel.id !== action.id
+                ))
+            ]
+        }
     } else {
         return state;
     }
