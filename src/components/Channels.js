@@ -19,6 +19,7 @@ class Channels extends Component {
         })
     }
 
+
     render() {
         const tabs = this.props.channelTabs.map((tab, i) => (
             <div
@@ -28,6 +29,7 @@ class Channels extends Component {
             >
                 {tab.title}
                 <button className='btn' onClick={() => this.handleDelete(tab.id)}><i className="fas fa-times"></i></button>
+
             </div>
         ))
         return (

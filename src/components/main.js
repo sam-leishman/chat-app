@@ -49,6 +49,7 @@ export function reducer(state, action) {
             ...state,
             currentChannelId: action.id,
         }
+
     } else if (action.type === 'ADD_CHANNEL') {
         const channelToAdd = {
             id: uuidv4(),
