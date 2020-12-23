@@ -1,7 +1,7 @@
-import './App.css';
+import '../App.css';
 import { Component } from 'react';
-import HomePage from "./HomePage.js"
-import ProfilePage from "./ProfilePage"
+import HomePage from "../pages/HomePage.js"
+import ProfilePage from "../pages/ProfilePage"
 
 import {
   BrowserRouter as Router,
