@@ -1,4 +1,4 @@
-import '../App.css';
+import '../App.scss';
 import React, { useState, useEffect } from 'react';
 
 import { auth } from "../services/firebase";
@@ -27,7 +27,6 @@ const App = () => {
       if (user) {
         setAuth(true)
         setUser(user)
-        console.log(user)
       } else {
         setAuth(false)
         setUser(null)
@@ -38,24 +37,19 @@ const App = () => {
   return (
     <Router>
       <div>
-        <div>
+        <div className='navbar'>
           <Link to="/">
-            Home Chat
+            Chat
           </Link>
           <Link to="/profile">
-            Profile Page <i className="fas fa-user-circle"></i>
-          </Link>
-          <Link to="/login">
-            Login
+            {authenticated ? 'Profile' : 'Login'} <i className="fas fa-user-circle"></i>
           </Link>
         </div>
         <Switch>
-          {/* We'll insert more Route components here */}
-          <Route exact path="/" component={HomePage} />
+          <PrivateRoute exact path="/" authenticated={authenticated} user={user} component={HomePage} />
           <Route path="/login" component={LoginPage} />
           <PublicRoute authenticated={authenticated} path="/public" component={PublicPage} />
-          <PrivateRoute authenticated={authenticated} path="/profile" component={ProfilePage} />
-          {/* <Route path="/ProfilePage" component={ProfilePage} /> */}
+          <PrivateRoute authenticated={authenticated} user={user} path="/profile" component={ProfilePage} />
           <Route path="/#" />
         </Switch>
       </div>
