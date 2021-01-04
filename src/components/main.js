@@ -1,6 +1,5 @@
 import { createStore } from 'redux';
 import { v4 as uuidv4 } from 'uuid';
-// import { time } from './date.js'
 
 export function reducer(state, action) {
     if (action.type === 'ADD_MESSAGE') {
@@ -48,6 +47,29 @@ export function reducer(state, action) {
         return {
             ...state,
             currentChannelId: action.id,
+        }
+
+    } else if (action.type === 'ADD_CHANNEL') {
+        const channelToAdd = {
+            id: uuidv4(),
+            title: action.title,
+            messages: [],
+        }
+        return {
+            ...state,
+            channels: [
+                ...state.channels,
+                channelToAdd,
+            ]
+        }
+    } else if (action.type === 'DELETE_CHANNEL') {
+        return {
+            ...state,
+            channels: [
+                ...state.channels.filter(channel => (
+                    channel.id !== action.id
+                ))
+            ]
         }
     } else {
         return state;

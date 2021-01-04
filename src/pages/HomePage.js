@@ -23,24 +23,25 @@ class HomePage extends Component {
                 id: c.id,
             }
         ))
-
+        const userInfo = this.props.user;
         return (
             <div className='container-fluid'>
                 <div className="row no-gutters header">
-                    <header className='server-name col-3'>
+                    <header className='server-name col-3 col-lg-2'>
                         <ServerName></ServerName>
                     </header>
-                    <header className='channel-header col-9'>
+                    <header className='channel-header col-9 col-lg-10'>
                         <Header channelTabs={channelTabs} />
                     </header>
                 </div>
                 <div className='main-page row no-gutters'>
-                    <div className='channels col-3'>
+                    <div className='channels col-3 col-lg-2'>
                         <Channels channelTabs={channelTabs} />
                     </div>
-                    <div className='messages-box col-9'>
+                    <div className='messages-box col-9 col-lg-10'>
                         <Chat
                             channel={currentChannel}
+                            user={userInfo}
                         />
                     </div>
                 </div>

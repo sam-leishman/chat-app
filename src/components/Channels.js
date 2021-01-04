@@ -11,6 +11,16 @@ class Channels extends Component {
             id: id,
         })
     }
+
+    handleDelete = (e,id) => {
+        e.stopPropagation();
+        store.dispatch({
+            type: 'DELETE_CHANNEL',
+            id: id,
+        })
+    }
+
+
     render() {
         const tabs = this.props.channelTabs.map((tab, i) => (
             <div
@@ -19,6 +29,8 @@ class Channels extends Component {
                 onClick={() => this.handleClick(tab.id)}
             >
                 {tab.title}
+                <button className='btn' onClick={(e) => this.handleDelete(e,tab.id)}><i className="fas fa-times"></i></button>
+
             </div>
         ))
         return (

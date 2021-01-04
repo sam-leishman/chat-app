@@ -1,14 +1,17 @@
+/* general styles */
+
 body {
   padding: 0;
   margin: 0;
 }
 
-.server-name {
-  height: 10vh;
-  border: 1px solid black;
+h5 {
+  text-align: center;
 }
 
-.channel-header {
+/* chat page styles */
+
+.server-name {
   height: 10vh;
   border: 1px solid black;
 }
@@ -21,10 +24,52 @@ body {
   height: 90vh;
 }
 
+/* header styles */
+
+.channel-header {
+  height: 10vh;
+  border: 1px solid black;
+}
+
+.header {
+  padding: 0;
+}
+
+/* channels styles */ 
+
 .channels {
   border: 1px solid black;
   height: 100%;
 }
+
+.tab {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 5px 0;
+  padding: 0 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.currentTab {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 5px 0;
+  padding: 0 5px;
+  background-color: gray;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.no-channel {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* input styles */
 
 .component-with-input {
   height: 100%;
@@ -38,43 +83,6 @@ body {
   height: 100%;
   overflow-y: scroll;
 }
-
-.message {
-  border: 1px solid black;
-  border-radius: 5px;
-  margin: 10px;
-  background-color: blanchedalmond;
-  text-align: left;
-  padding: 0px 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.timestamp {
-  color: gray;
-  font-size: 10pt;
-}
-
-.trash-button {
-  visibility: hidden;
-}
-
-.message:hover .trash-button {
-  visibility: visible;
-}
-
-.header {
-  padding: 0;
-}
-
-/* .message-input {
-  border: 1px solid black;
-}
-
-.channel-input {
-  border: 1px solid black;
-} */
 
 .input-form {
   display: flex;
@@ -116,23 +124,51 @@ body {
   width: 100%;
 }
 
-.tab {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  margin: 5px 0;
-  padding: 0 5px;
+/* chat box styles */
+
+.message {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: blanchedalmond;
+  text-align: left;
+  padding: 0px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.currentTab {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  margin: 5px 0;
-  padding: 0 5px;
-  background-color: gray;
-  color: white;
+.timestamp {
+  color: gray;
+  font-size: 10pt;
 }
 
-h5 {
-  text-align: center;
+.trash-button {
+  visibility: hidden;
 }
 
+.message:hover .trash-button {
+  visibility: visible;
+}
+
+/* profile page styles */
+
+.profile-page {
+  display: flex;
+  flex-direction: column;
+
+  .user-info {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+
+    .profile-pic {
+      border: 1px solid black;
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+    }
+  }
+}
