@@ -13,7 +13,6 @@ class Chat extends Component {
 
     render() {
         const userInfo = this.props.user;
-        console.log(userInfo)
 
         if (this.props.channel === undefined) {
             return (
