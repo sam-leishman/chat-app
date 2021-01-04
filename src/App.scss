@@ -5,51 +5,80 @@ body {
   margin: 0;
 }
 
-h5 {
-  text-align: center;
-}
-
-/* chat page styles */
-
-.server-name {
-  height: 10vh;
-  border: 1px solid black;
-}
-
 .container-fluid {
   padding: 0;
 }
 
 .main-page {
   height: 90vh;
+  .channels {
+    border: 1px solid black;
+    height: 100%;
+  }
+
+  .messages-box {
+    border: 1px solid black;
+    height: 100%;
+    overflow-y: scroll;
+  }
 }
 
-/* header styles */
-
-.channel-header {
-  height: 10vh;
-  border: 1px solid black;
-}
-
-.header {
-  padding: 0;
-}
-
-/* channels styles */ 
-
-.channels {
-  border: 1px solid black;
+.component-with-input {
   height: 100%;
-}
-
-.tab {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  margin: 5px 0;
-  padding: 0 5px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+
+  .message-wrapper {
+    display: flex;
+
+    .profile-pic-icon {
+      border: 1px solid black;
+      border-radius: 50%;
+    }
+
+    .message {
+      border: 1px solid black;
+      border-radius: 5px;
+      margin: 10px;
+      background-color: blanchedalmond;
+      text-align: left;
+      padding: 0px 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:hover .trash-button {
+        visibility: visible;
+      }
+
+      .trash-button {
+        visibility: hidden;
+      }
+    }
+  }
+
+  .tab {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: 5px 0;
+    padding: 0 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .currentTab {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: 5px 0;
+    padding: 0 5px;
+    background-color: gray;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .currentTab {
@@ -63,79 +92,58 @@ h5 {
   justify-content: space-between;
   align-items: center;
 }
+.header {
+  padding: 0;
 
-.no-channel {
-  text-align: center;
-  margin-top: 20px;
-}
-
-/* input styles */
-
-.component-with-input {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.messages-box {
-  border: 1px solid black;
-  height: 100%;
-  overflow-y: scroll;
+  .server-name {
+    height: 10vh;
+    border: 1px solid black;
+  }
+  
+  .channel-header {
+    height: 10vh;
+    border: 1px solid black;
+  }
 }
 
 .input-form {
   display: flex;
-}
 
-.input-form form {
-  width: 100%;
-}
+  form {
+    width: 100%;
+  }
 
-.input-form input {
-  height: 100%;
-  width: 100%;
-  padding-left: 5px;
-  background-color: rgba(0, 0, 0, 0.2);
-  border: none;
-  border-bottom: 1px solid blueviolet;
+  input {
+    height: 100%;
+    width: 100%;
+    padding-left: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: none;
+    border-bottom: 1px solid blueviolet;
 
-  transition: border-bottom 150ms ease-in;
-}
+    transition: border-bottom 150ms ease-in;
 
-.input-form input:focus {
-  border-bottom-width: 3px;
-  outline: none;
-}
+    &:focus {
+      border-bottom-width: 3px;
+      outline: none;
+    }
+  }
 
-.input-form button {
-  background-color: rgba(138, 43, 226, 0.5);
-  border-radius: 0;
+  button {
+    background-color: rgba(138, 43, 226, 0.5);
+    border-radius: 0;
 
-  transition: all 150ms ease-in;
-}
+    transition: all 150ms ease-in;
+    
+    &:hover {
+      background-color: blueviolet;
+      color: white;
+    }
+  }
 
-.input-form button:hover {
-  background-color: blueviolet;
-  color: white;
-}
-
-.channel-submit-input {
-  width: 100%;
-}
-
-/* chat box styles */
-
-.message {
-  border: 1px solid black;
-  border-radius: 5px;
-  margin: 10px;
-  background-color: blanchedalmond;
-  text-align: left;
-  padding: 0px 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  .channel-submit-input {
+    width: 100%;
+  }
 }
 
 .timestamp {

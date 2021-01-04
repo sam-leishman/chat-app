@@ -22,7 +22,7 @@ class Chat extends Component {
         }
 
         const messages = this.props.channel.messages.map((message, index) => (
-            <div>
+            <div className='message-wrapper'>
                 <img className='profile-pic-icon' src={userInfo.photoURL} />
                 <div key={index} className='message flex'>
                     {message.text}
@@ -39,7 +39,7 @@ class Chat extends Component {
                 <div>
                     {messages}
                 </div>
-                <div className='message-input'>
+                <div>
                     <ChatInput channelId={this.props.channel.id} />
                 </div>
             </div>
