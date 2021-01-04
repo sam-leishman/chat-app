@@ -39,7 +39,7 @@ class Channels extends Component {
                     <h5>Channels</h5>
                     {tabs}
                 </div>
-                <div className='channel-input'>
+                <div>
                     <ChannelInput />
                 </div>
             </div>
