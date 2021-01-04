@@ -149,6 +149,10 @@ h5 {
 
 
 
+/* .login {
+  align right
+} */
+
 .user-info {
   border: 1px solid black;
   display: flex;
