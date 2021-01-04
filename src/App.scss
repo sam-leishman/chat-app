@@ -1,9 +1,9 @@
+
 // $primary-color: ;
 // $secondary-color: ;
 $background-color: #3A3B3C;
 
 /* general styles */
-
 body {
   padding: 0;
   margin: 0;
@@ -16,6 +16,7 @@ body {
 
 .main-page {
   height: 90vh;
+
   .channels {
     border: 1px solid black;
     height: 100%;
@@ -36,10 +37,14 @@ body {
 
   .message-wrapper {
     display: flex;
+    align-items: center;
+    margin: 5px;
 
     .profile-pic-icon {
       border: 1px solid black;
       border-radius: 50%;
+      height: 50px;
+      width: 50px;
     }
 
     .message {
@@ -52,6 +57,7 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      width: 100%;
 
       &:hover .trash-button {
         visibility: visible;
@@ -86,17 +92,11 @@ body {
   }
 }
 
-.currentTab {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  margin: 5px 0;
-  padding: 0 5px;
-  background-color: gray;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.timestamp {
+  color: gray;
+  font-size: 10pt;
 }
+
 .header {
   padding: 0;
 
@@ -139,7 +139,7 @@ body {
     border-radius: 0;
 
     transition: all 150ms ease-in;
-    
+
     &:hover {
       background-color: blueviolet;
       color: white;
@@ -151,20 +151,16 @@ body {
   }
 }
 
-.timestamp {
-  color: gray;
-  font-size: 10pt;
+.no-channel {
+  text-align: center;
+  margin-top: 20px;
 }
 
-.trash-button {
-  visibility: hidden;
+h5 {
+  text-align: center;
 }
 
-.message:hover .trash-button {
-  visibility: visible;
-}
 
-/* profile page styles */
 
 .profile-page {
   display: flex;
