@@ -13,7 +13,6 @@ import PublicRoute from "./PublicRoute";
 import {
   BrowserRouter as Router,
   Link,
-  Redirect,
   Route,
   Switch
 } from 'react-router-dom'
