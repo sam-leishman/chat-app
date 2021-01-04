@@ -23,6 +23,7 @@ class HomePage extends Component {
                 id: c.id,
             }
         ))
+        const userInfo = this.props.user;
         return (
             <div className='container-fluid'>
                 <div className="row no-gutters header">
@@ -40,6 +41,7 @@ class HomePage extends Component {
                     <div className='messages-box col-9 col-lg-10'>
                         <Chat
                             channel={currentChannel}
+                            user={userInfo}
                         />
                     </div>
                 </div>
