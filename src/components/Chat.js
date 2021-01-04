@@ -22,9 +22,9 @@ class Chat extends Component {
         }
 
         const messages = this.props.channel.messages.map((message, index) => (
-            <div className='message-wrapper'>
-                <img className='profile-pic-icon' src={userInfo.photoURL} />
-                <div key={index} className='message flex'>
+            <div key={index} className='message-wrapper'>
+                <img className='profile-pic-icon' src={userInfo.photoURL} alt='profile' />
+                <div className='message flex'>
                     {message.text}
                     <div>
                         <span className='timestamp flex'>{message.timestamp}</span>

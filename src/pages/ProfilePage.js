@@ -9,7 +9,7 @@ const ProfilePage = (rest) => {
                     <h1 className='username'>{rest.user.displayName}</h1>
                     <p className='timestamp'>{rest.user.email}</p>
                 </div>
-                <img className='profile-pic' src={rest.user.photoURL} />
+                <img className='profile-pic' src={rest.user.photoURL} alt='profile' />
             </div>
             <button className='btn' onClick={signout}>Sign out <i className="fas fa-sign-out-alt"></i></button>
         </div>
