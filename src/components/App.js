@@ -1,4 +1,4 @@
-import '../App.css';
+import '../App.scss';
 import { Component } from 'react';
 import HomePage from "../pages/HomePage.js"
 import ProfilePage from "../pages/ProfilePage"
@@ -15,7 +15,6 @@ class App extends Component {
     return (
       <Router>
         <div>
-          This is a bunch of filler text.
           <div className="ui menu">
             <Link to="/HomePage">
               Home Chat
