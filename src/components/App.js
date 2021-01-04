@@ -1,42 +1,66 @@
 import '../App.css';
-import { Component } from 'react';
-import HomePage from "../pages/HomePage.js"
-import ProfilePage from "../pages/ProfilePage"
+import React, { useState, useEffect } from 'react';
+
+import { auth } from "../services/firebase";
+
+import HomePage from "../pages/HomePage.js";
+import LoginPage from "../pages/LoginPage.js";
+import ProfilePage from "../pages/ProfilePage";
+import PublicPage from "../pages/PublicPage";
+import PrivateRoute from "./PrivateRoute";
+import PublicRoute from "./PublicRoute";
 
 import {
   BrowserRouter as Router,
   Link,
+  Redirect,
   Route,
   Switch
 } from 'react-router-dom'
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
+const App = () => {
+  let [authenticated, setAuth] = useState(false)
+  let [user, setUser] = useState(null)
+
+  useEffect(() => {
+    auth().onAuthStateChanged(user => {
+      if (user) {
+        setAuth(true)
+        setUser(user)
+        console.log(user)
+      } else {
+        setAuth(false)
+        setUser(null)
+      }
+    })
+  }, [])
+
+  return (
+    <Router>
+      <div>
         <div>
-          This is a bunch of filler text.
-          <div className="ui menu">
-            <Link to="/HomePage">
-              Home Chat
-            </Link>
-            <Link to="/ProfilePage">
-              Profile Page
-            </Link>
-            <Link to="/#">
-              Root
-            </Link>
-          </div>
-          <Switch>
-            {/* We'll insert more Route components here */}
-            <Route path="/HomePage" component={HomePage} />
-            <Route path="/ProfilePage" component={ProfilePage} />
-            <Route path="/#" />
-          </Switch>
+          <Link to="/">
+            Home Chat
+          </Link>
+          <Link to="/profile">
+            Profile Page <i className="fas fa-user-circle"></i>
+          </Link>
+          <Link to="/login">
+            Login
+          </Link>
         </div>
-      </Router>
-    )
-  }
+        <Switch>
+          {/* We'll insert more Route components here */}
+          <Route exact path="/" component={HomePage} />
+          <Route path="/login" component={LoginPage} />
+          <PublicRoute authenticated={authenticated} path="/public" component={PublicPage} />
+          <PrivateRoute authenticated={authenticated} path="/profile" component={ProfilePage} />
+          {/* <Route path="/ProfilePage" component={ProfilePage} /> */}
+          <Route path="/#" />
+        </Switch>
+      </div>
+    </Router>
+  )
 }
 
 export default App;
