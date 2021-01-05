@@ -32,6 +32,7 @@ const App = () => {
       }
     })
   }, [])
+  console.log('App ' + authenticated)
 
   return (
     <Router>
@@ -40,6 +41,7 @@ const App = () => {
           <Link className="link" to="/">
             Chat
           </Link>
+          <h5 class='header-website-name'>{authenticated ? 'Spiffy' : ''}</h5>
           <Link className="link" to="/profile">
             {authenticated ? 'Profile' : 'Not signed in'} <i className="fas fa-user-circle"></i>
           </Link>
