@@ -41,7 +41,7 @@ const App = () => {
             Chat
           </Link>
           <Link to="/profile">
-            {authenticated ? 'Profile' : 'Login'} <i className="fas fa-user-circle"></i>
+            {authenticated ? 'Profile' : 'Not signed in'} <i className="fas fa-user-circle"></i>
           </Link>
         </div>
         <Switch>
