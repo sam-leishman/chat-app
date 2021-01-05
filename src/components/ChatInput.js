@@ -1,9 +1,16 @@
 import { Component } from "react";
 import { store } from "./main.js";
+import { animateScroll } from "react-scroll";
 
 class ChatInput extends Component {
     state = {
         value: '',
+    }
+
+    scrollToBottom = () => {
+        animateScroll.scrollToBottom({
+          containerId: "message-overflow"
+        });
     }
 
     onChange = (e) => {
@@ -54,7 +61,7 @@ class ChatInput extends Component {
         })
         this.setState({
             value: '',
-        })
+        }, this.scrollToBottom)
     }
 
     render() {
