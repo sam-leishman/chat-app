@@ -82,13 +82,7 @@ export const initialState = {
         {
             id: '1-fca2',
             title: 'general',
-            messages: [
-                {
-                    text: 'Test',
-                    timestamp: '(timestamp)',
-                    id: uuidv4(),
-                },
-            ],
+            messages: [],
         },
         {
             id: '2-be91',

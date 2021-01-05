@@ -66,6 +66,7 @@ class ChatInput extends Component {
                         value={this.state.value}
                         type='text'
                         placeholder='Send a message!'
+                        maxLength={300}
                     />
                 </form>
                 <button

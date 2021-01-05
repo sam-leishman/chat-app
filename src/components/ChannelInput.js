@@ -36,6 +36,7 @@ class ChannelInput extends Component {
                         type="text"
                         className="channel-submit-input"
                         placeholder='New channel'
+                        maxLength={30}
                     />
                 </form>
                 <button
