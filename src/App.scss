@@ -30,7 +30,6 @@ body {
   .messages-box {
     border: 1px solid black;
     height: 100%;
-    overflow-y: scroll;
   }
 }
 
@@ -39,6 +38,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  .message-overflow {
+    overflow-y: scroll;
+  }
 
   .message-wrapper {
     display: flex;
@@ -63,6 +66,7 @@ body {
       justify-content: space-between;
       align-items: center;
       width: 100%;
+      overflow-wrap: anywhere;
 
       &:hover .trash-button {
         visibility: visible;
@@ -83,6 +87,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow-wrap: anywhere;
 
     button {
       color: $text-color;
@@ -99,6 +104,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow-wrap: anywhere;
   }
 }
 
@@ -234,21 +240,19 @@ h5 {
   }
 }
 
-}
-
 .navbar {
   border-bottom: 1px solid black;
 
   .link {
-    color: black;
+    color: $purple;
   }
 
   .link:active {
-    color: black;
+    color: $purple;
   }
 
   .link:hover {
-    color: black;
+    color: $purple;
   }
 }
 
