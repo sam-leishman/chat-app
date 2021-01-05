@@ -81,7 +81,7 @@ export const initialState = {
     channels: [
         {
             id: '1-fca2',
-            title: 'Test Channel 1',
+            title: 'general',
             messages: [
                 {
                     text: 'Test',
@@ -92,7 +92,7 @@ export const initialState = {
         },
         {
             id: '2-be91',
-            title: 'Test Channel 2',
+            title: 'classroom-channel',
             messages: [],
         },
     ],

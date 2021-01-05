@@ -9,7 +9,7 @@ class Header extends Component {
         })
         return (
             <div>
-                <h3 className='channel-name'>{channelName}</h3>
+                <h2 className='channel-name'>{channelName}</h2>
             </div>
         )
     }
