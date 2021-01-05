@@ -1,3 +1,5 @@
+@import 'Responsive.scss';
+
 $dark-blue: #003F91;
 $light-blue: #A9D3FF;
 $dark-green: #048A81;
@@ -20,7 +22,7 @@ body {
 }
 
 .main-page {
-  height: 85vh;
+  height: 84.9vh;
 
   .channels {
     border: 1px solid black;
@@ -228,27 +230,26 @@ h5 {
     }
   }
 
-
   button {
     color: $text-color;
   }
 }
 
-}
 
 .navbar {
   border-bottom: 1px solid black;
 
   .link {
-    color: black;
+    color: $purple;
   }
 
   .link:active {
-    color: black;
+    color: $purple;
   }
 
   .link:hover {
-    color: black;
+    color: $purple;
   }
 }
+
 
