@@ -7,6 +7,7 @@ $background-color: #3A3B3C;
 $text-color: white;
 
 /* general styles */
+
 body {
   padding: 0;
   margin: 0;
@@ -19,7 +20,7 @@ body {
 }
 
 .main-page {
-  height: 90vh;
+  height: 85vh;
 
   .channels {
     border: 1px solid black;
@@ -110,6 +111,10 @@ body {
   padding: 0;
 
   .server-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     height: 10vh;
     border: 1px solid black;
   }
@@ -117,6 +122,9 @@ body {
   .channel-header {
     height: 10vh;
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -220,7 +228,27 @@ h5 {
     }
   }
 
+
   button {
     color: $text-color;
   }
 }
+
+}
+
+.navbar {
+  border-bottom: 1px solid black;
+
+  .link {
+    color: black;
+  }
+
+  .link:active {
+    color: black;
+  }
+
+  .link:hover {
+    color: black;
+  }
+}
+

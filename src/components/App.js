@@ -37,10 +37,10 @@ const App = () => {
     <Router>
       <div>
         <div className='navbar'>
-          <Link to="/">
+          <Link className="link" to="/">
             Chat
           </Link>
-          <Link to="/profile">
+          <Link className="link" to="/profile">
             {authenticated ? 'Profile' : 'Not signed in'} <i className="fas fa-user-circle"></i>
           </Link>
         </div>
