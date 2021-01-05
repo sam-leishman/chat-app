@@ -35,7 +35,7 @@ class Chat extends Component {
 
         return (
             <div className='component-with-input'>
-                <div className='message-overflow'>
+                <div id='message-overflow'>
                     {messages}
                 </div>
                 <div>
