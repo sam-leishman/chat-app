@@ -1,6 +1,9 @@
-// $primary-color: ;
-// $secondary-color: ;
-$background-color: white;
+$dark-blue: #003F91;
+$light-blue: #A9D3FF;
+$dark-green: #048A81;
+$light-green: #61E786;
+$background-color: #3A3B3C;
+$text-color: white;
 
 /* general styles */
 
@@ -8,6 +11,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: $background-color;
+  color: $text-color;
 }
 
 .container-fluid {
@@ -51,7 +55,7 @@ body {
       border: 1px solid black;
       border-radius: 5px;
       margin: 10px;
-      background-color: blanchedalmond;
+      background-color: $dark-blue;
       text-align: left;
       padding: 0px 5px;
       display: flex;
@@ -65,6 +69,7 @@ body {
 
       .trash-button {
         visibility: hidden;
+        color: $light-blue;
       }
     }
   }
@@ -77,6 +82,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    button {
+      color: $text-color;
+    }
   }
   
   .currentTab {
@@ -84,8 +93,8 @@ body {
     border-bottom: 1px solid black;
     margin: 5px 0;
     padding: 0 5px;
-    background-color: gray;
-    color: white;
+    background-color: $dark-green;
+    color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -132,6 +141,7 @@ body {
     background-color: rgba(0, 0, 0, 0.2);
     border: none;
     border-bottom: 1px solid blueviolet;
+    color: $text-color;
 
     transition: border-bottom 150ms ease-in;
 
