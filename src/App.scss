@@ -206,12 +206,42 @@ h5 {
     margin: 25px;
     background-color: $dark-green;
     color: $text-color;
+    border: none;
+    border-radius: 10px;
 
     transition: all 150ms ease-out;
 
     &:hover {
-      box-shadow: 0 0 10px black;
-      background-color: $dark-blue;
+      box-shadow: 0 0 15px black;
+      background-color: rgb(95, 32, 155);
+    }
+  }
+}
+
+.signed-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+
+  .link-buttons {
+    height: 50px;
+    width: 200px;
+    margin: 25px;
+    margin-top: 50px;
+    background-color: $dark-green;
+    color: $text-color;
+    text-decoration: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 150ms ease-out;
+
+    &:hover {
+      box-shadow: 0 0 15px black;
+      background-color: rgb(95, 32, 155);
     }
   }
 }
