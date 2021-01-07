@@ -9,6 +9,7 @@ import ProfilePage from "../pages/ProfilePage";
 import PublicPage from "../pages/PublicPage";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
+import SignedIn from "./SignedIn"
 
 import {
   BrowserRouter as Router,
@@ -32,7 +33,7 @@ const App = () => {
       }
     })
   }, [])
-  console.log('App ' + authenticated)
+  console.log('App.js: ' + authenticated)
 
   return (
     <Router>
@@ -48,7 +49,7 @@ const App = () => {
         </div>
         <Switch>
           <PrivateRoute exact path="/" authenticated={authenticated} user={user} component={HomePage} />
-          <Route path="/login" component={LoginPage} />
+          { authenticated ? <Route path="/login" component={SignedIn} /> : <Route path="/login" component={LoginPage} />}
           <PublicRoute authenticated={authenticated} path="/public" component={PublicPage} />
           <PrivateRoute authenticated={authenticated} user={user} path="/profile" component={ProfilePage} />
           <Route path="/#" />
