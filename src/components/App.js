@@ -12,7 +12,7 @@ import PublicRoute from "./PublicRoute";
 import SignedIn from "./SignedIn"
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Link,
   Route,
   Switch
